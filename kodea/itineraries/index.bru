@@ -1,0 +1,21 @@
+meta {
+  name: index
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://127.0.0.1:8000/itineraries?duration_mins&agent_rating=>8&airline_name
+  body: none
+  auth: none
+}
+
+params:query {
+  duration_mins: 
+  agent_rating: >8
+  airline_name: 
+  ~agent: Wizzair
+  ~price: <36
+  ~id: it_2,it_1
+  ~stops: 
+}

@@ -41,3 +41,36 @@ The provided (https://raw.githubusercontent.com/Skyscanner/full-stack-recruitmen
 ---
 
 Inspiration for the test format taken with ❤️ from [JustEat's recruitment test](https://github.com/justeat/JustEat.RecruitmentTest).
+
+---
+
+## Available routes
+
+To seed database:
+1. getData: **GET** - `{{localhost}}/dbmanager/getData`
+  > If everything works as expected, you will receive the following JSON response: {
+  "messages": [
+    "Itineraries seeded",
+    "Legs seeded",
+    "ItineraryLegs seeded"
+  ]
+}
+    
+2. Flight (or itineraies): **GET** `{{localhost}}/itineraries/`
+   1. Default (no query parameters): Retrieves all flights without additional details.
+   2. You can add the following complementary data for itineraries:: 
+      1. agent_rating
+      2. price
+   3. You can add the following complementary data for legs:
+      1. stops
+      2. duration_mins
+      3. airline_name
+   4. Search by:
+      1. itinerary.**id**
+      2. itinerary.**agent**
+      3. itinerary.**price**
+      4. itinerary.**agent_rating**
+      > If a parameter is provided in the format: **id=it_2,it_1**, the API will return the records matching this pattern. _This works for all parameters_.
+   5. Filters:
+      1. The available comparisons are [ >, <], and work propertly with **price** and **agent_rating**
+  
